@@ -75,7 +75,7 @@ function App() {
       className="App"
       style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif" }}
     >
-      <h2>Chat with LLM</h2>
+      <h2>Chat with Tithi</h2>
 
       <div
         style={{
@@ -130,5 +130,4 @@ function App() {
     </div>
   );
 }
-console.log("App is rendering");
 export default App;
