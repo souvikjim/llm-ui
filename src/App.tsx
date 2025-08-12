@@ -50,7 +50,10 @@ function App() {
       const res = await fetch(`${backendURL}/ask_llm`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: input }),
+        body: JSON.stringify({
+          prompt: input,
+          max_tokens: 500, // allow long answers
+        }),
       });
 
       const data = await res.json();
