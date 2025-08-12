@@ -41,7 +41,6 @@ function App() {
     if (!backendURL) {
       console.error("Backend URL is missing! Check .env or VITE_BACKEND_URL");
     }
-    console.log("backendURL :>> ", backendURL);
     const userMessage: ChatMessage = { role: "user", content: input };
     dispatch(addMessage(userMessage));
     dispatch(setLoading(true));
@@ -56,7 +55,8 @@ function App() {
 
       const data = await res.json();
       const botText =
-        data?.response?.choices?.[0]?.text?.trim() || "No response text.";
+        data?.response?.choices?.[0]?.message?.content?.trim() ||
+        "No response text.";
       const botMessage: ChatMessage = { role: "assistant", content: botText };
       dispatch(addMessage(botMessage));
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
