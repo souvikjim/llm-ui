@@ -78,7 +78,7 @@ function App() {
       className="App"
       style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif" }}
     >
-      <h2>Chat with Botvik</h2>
+      <h2>Chat with NeuroChat</h2>
 
       <div
         style={{
