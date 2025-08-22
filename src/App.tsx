@@ -57,8 +57,9 @@ function App() {
       });
 
       const data = await res.json();
+      console.log('data :>> ', data.text);
       const botText =
-        data?.response?.choices?.[0]?.message?.content?.trim() ||
+        data.text.trim() ||
         "No response text.";
       const botMessage: ChatMessage = { role: "assistant", content: botText };
       dispatch(addMessage(botMessage));
